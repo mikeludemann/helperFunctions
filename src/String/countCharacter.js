@@ -1,23 +1,33 @@
-function countLowerChar(str) {
+function countLowerChar(string) {
 
-    return str.match(/[a-z]/gi).length;
-
-}
-
-function countUpperChar(str) {
-
-    return str.match(/[A-Z]/gi).length;
+    return string.match(/[a-z]/gi).length;
 
 }
 
-function countVowelChar(str) {
+function countUpperChar(string) {
 
-    return str.match(/[aAeEiIoOuUäÄöÖüÜ]/gi).length;
+    return string.match(/[A-Z]/gi).length;
 
 }
 
-function countConsonantlChar(str) {
+function countVowelChar(string) {
 
-    return str.match(/[bBcCdDfFgGhHjJkKlLmMnNpPqQrRsStTvVwWxXyYzZ]/gi).length;
+    return string.match(/[aAeEiIoOuUäÄöÖüÜ]/gi).length;
+
+}
+
+function countConsonantChar(string) {
+
+    return string.match(/[bBcCdDfFgGhHjJkKlLmMnNpPqQrRsStTvVwWxXyYzZ]/gi).length;
+
+}
+
+function countChar(string) {
+
+    var uniqueCharacter = {};
+
+    string.replace(/\S/g, function (l) { uniqueCharacter[l] = (isNaN(uniqueCharacter[l]) ? 1 : uniqueCharacter[l] + 1); });
+
+    return uniqueCharacter;
 
 }

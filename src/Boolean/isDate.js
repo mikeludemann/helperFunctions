@@ -17,7 +17,7 @@ function isDate(string) {
 }
 
 function isDateEuropean(string) {
-    
+
     regexp = /^(3[01]|[12][0-9]|0?[1-9])\/(1[0-2]|0?[1-9])\/(?:[0-9]{2})?[0-9]{2}$/;
 
     if (regexp.test(string)) {
@@ -33,3 +33,17 @@ function isDateEuropean(string) {
     }
 
 }
+
+var isDate = function (input) {
+
+    if (Object.prototype.toString.call(input) === "[object Date]") {
+
+        return true;
+
+    } else {
+
+        return false;
+
+    }
+    
+};
