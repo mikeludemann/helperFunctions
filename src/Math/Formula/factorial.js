@@ -39,3 +39,30 @@ function getFactorialSteps(number) {
     return factors;
 
 }
+
+function fallingFactorial(number, topics) {
+
+    var i = (number - topics + 1),
+        r = 1;
+
+    if (number < 0) {
+
+        throw new Error("Number must be positive.");
+
+    }
+
+    if (topics > number) {
+
+        throw new Error("Topics can not be greater than number.");
+
+    }
+
+    while (i <= number) {
+
+        r *= i++;
+
+    }
+
+    return r;
+
+}

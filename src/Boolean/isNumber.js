@@ -1,5 +1,11 @@
-function isNumber(value) {
+function isNumber(number) {
 
-    return !isNaN(value) && toString.call(value) === '[object Number]';
-    
+    return !isNaN(number) && toString.call(number) === '[object Number]';
+
+}
+
+function isNumeric(number) {
+
+    return !isNaN(parseFloat(number)) && isFinite(number);
+
 }
