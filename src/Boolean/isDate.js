@@ -34,7 +34,7 @@ function isDateEuropean(string) {
 
 }
 
-var isDate = function (input) {
+var isDateFormat = function (input) {
 
     if (Object.prototype.toString.call(input) === "[object Date]") {
 
@@ -45,5 +45,22 @@ var isDate = function (input) {
         return false;
 
     }
-    
+
 };
+
+function isValidDate(dayElement, monthElement, yearElement) {
+
+    var day = Number(document.querySelector(dayElement).value),
+        month = Number(document.querySelector(monthElement).value),
+        year = Number(document.querySelector(yearElement).value);
+
+    var date = new Date();
+
+    date.setFullYear(year, month - 1, day);
+
+    if ((date.getFullYear() == year) && (date.getMonth() == month + 1) && (date.getDate() == day))
+        return true;
+
+    return false;
+    
+}
